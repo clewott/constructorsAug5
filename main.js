@@ -6,13 +6,13 @@ function Athlete(name, sport, speed) {
   this.eat = function(food) {
     var speedWeight = this.speed + food.weight;
     if (speedWeight > 110) {
-    console.log("Damn you are fast!");
+    console.log("WOW!! You are going to set a record.");
   }
     else if(speedWeight > 70 && speedWeight < 110){
-      console.log("You may want to eay something");
+      console.log("It looks like you need a little bit of practice.");
     }
     else {
-    console.log("You really need to eat something!");
+    console.log("Maybe working out is not your thing.");
   }
   this.speed += food.weight
   };
@@ -100,11 +100,32 @@ var page = {
     });
 
     $(".fooditem").on("click", ".RedBullFood", function() {
-      Athletes.name.eat(RedBull);
+      Chris.eat(RedBull);
       console.log("Redbull");
 
   });
+    $(".fooditem").on("click", ".IceCreamFood", function() {
+    Chris.eat(IceCream);
+    console.log("IceCream");
 
+});
+    $(".fooditem").on("click", ".ProteinFood", function() {
+      Chris.eat(Protein);
+      console.log("Protein");
+
+  });
+  $(".athletefootwear").on("click", ".NikeShoe", function (){
+    Nike.footwear(Chris);
+    console.log("You picked Nike");
+  });
+  $(".athletefootwear").on("click", ".PumaShoe", function (){
+    Puma.footwear(Chris);
+    console.log("You picked Puma");
+  });
+  $(".athletefootwear").on("click", ".SandalShoe", function (){
+    Sandal.footwear(Chris);
+    console.log("You picked a pair of sandals");
+});
 
   }
 
