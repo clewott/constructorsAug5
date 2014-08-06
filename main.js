@@ -64,8 +64,5 @@ var IceCream = new Food("IceCream", -40, "Sick")
 var Protein = new Food("Protein", 10, "Healthy")
 var RedBull = new Food("RedBull", 50, "Full of toxins")
 
-var Nike = new Shoe("Nike", 20)
-var Flipper = new Shoe("Flipper", 15)
-
-
-// IceCream.eat(Phelps);
+var Trainer = new Shoe("Trainer", 20)
+var Sandal = new Shoe("Sandal", -15)
