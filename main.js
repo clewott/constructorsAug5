@@ -24,7 +24,7 @@ function Food(item, weight, effect) {
   this.weight = weight;
   this.effect = effect;
   this.cause = function(athlete) {
-    var whatDidYouEat = athlete.name +" is "+ this.effect + "!"
+    var whatDidYouEat = athlete.name +" is "+ this.effect + "!";
     if (this.effect === "Sick") {
       console.log(whatDidYouEat)
     } else if (this.effect === "Healthy") {
@@ -38,16 +38,22 @@ function Food(item, weight, effect) {
 
 }
 
-// function Shoe(brand, endurance) {
-//
-//   this.brand = brand;
-//   this.endurance = endurance;
-//   this.footwear = function() {
-//
-//
-//   }
+function Shoe(brand, endurance) {
 
-// }
+  this.brand = brand;
+  this.endurance = endurance;
+  this.footwear = function(athlete) {
+    var footwearPerformance = this.endurance + athlete.speed;
+    if (footwearPerformance > 95){
+      console.log("You picked the right footwear!")
+    } else {
+      console.log("You may want to pick another footwear");
+    }
+
+
+  }
+
+}
 
 
 var Phelps = new Athlete("Phelps", "Swimming", 85)
@@ -58,8 +64,8 @@ var IceCream = new Food("IceCream", -40, "Sick")
 var Protein = new Food("Protein", 10, "Healthy")
 var RedBull = new Food("RedBull", 50, "Full of toxins")
 
-// var Nike = new Shoe("Nike", 20)
-// var Adidas = new Shoe("Adidas", 15)
+var Nike = new Shoe("Nike", 20)
+var Flipper = new Shoe("Flipper", 15)
 
 
 // IceCream.eat(Phelps);
