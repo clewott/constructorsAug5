@@ -1,4 +1,3 @@
-var randath = Athletes;
 var speedWeight;
 
 function Athlete(name, sport, speed, distance) {
@@ -10,13 +9,13 @@ function Athlete(name, sport, speed, distance) {
   this.eat = function(food) {
     var speedWeight = this.speed + food.weight;
     if (speedWeight > 110) {
-    $(".footer").text("WOW!! You are going to set a record.");
+    $(".footer").text("WOW!! That gave you a nice boost of energy, your speed is now " + speedWeight + "!");
   }
     else if(speedWeight > 70 && speedWeight < 110){
-      $(".footer").text("It looks like you need a little bit of practice.");
+      $(".footer").text("Hopefully you can finish the workout, your speed is now " + speedWeight + "!");
     }
     else {
-    $(".footer").text("Maybe working out is not your thing.");
+    $(".footer").text("It is going to be a long day for you, your speed is now " + speedWeight + "!");
   }
   this.speed += food.weight
   };
@@ -24,13 +23,13 @@ function Athlete(name, sport, speed, distance) {
   this.footwear = function(shoe) {
     var speedFoot = this.distance + shoe.endurance;
     if (speedFoot > 8){
-      $(".footer2").text("Run forest run!");
+      $(".footer2").text("Run forest run! Your distance is now " + speedFoot + "!");
     } else if (speedFoot <= 8 && speedFoot > 4) {
-      $(".footer2").text("Run forest!");
-    } else { $(".footer2").text("Run!");
+      $(".footer2").text("Run forest! Your distance is now " + speedFoot + "!");
+    } else { $(".footer2").text("Run! Your distance is now " + speedFoot + "!");
+    }
     this.distance += shoe.endurance;
-    };
-  }
+  };
 
 }
 
@@ -104,6 +103,35 @@ var page = {
 
   },
   initEvents: function() {
+    var randAthlete;
+
+    $("#bt1").on("click", function(){
+    event.preventDefault();
+
+    randAthlete = Athletes[0];
+    console.log(randAthlete);
+    $("#btp").text("Speed = " + randAthlete.speed + " & Distance = " + randAthlete.distance);
+
+    });
+
+    $("#bt2").on("click", function(){
+    event.preventDefault();
+
+    randAthlete = Athletes[1];
+    console.log(randAthlete);
+    $("#btp").text("Speed = " + randAthlete.speed + " & Distance = " + randAthlete.distance);
+
+    });
+
+    $("#bt3").on("click", function(){
+    event.preventDefault();
+
+    randAthlete = Athletes[2];
+    console.log(randAthlete);
+    $("#btp").text("Speed = " + randAthlete.speed + " & Distance = " + randAthlete.distance);
+
+    });
+
     $(".select_athlete").on("click", "#Chris", function() {
       Chris;
       console.log(Chris);
@@ -120,33 +148,32 @@ var page = {
     });
 
     $(".fooditem").on("click", ".RedBullFood", function() {
-      Chris.eat(RedBull);
+      randAthlete.eat(RedBull);
       console.log("Redbull");
 
   });
     $(".fooditem").on("click", ".IceCreamFood", function() {
-    Chris.eat(IceCream);
+    randAthlete.eat(IceCream);
     console.log("IceCream");
 
 });
     $(".fooditem").on("click", ".ProteinFood", function() {
-      Chris.eat(Protein);
+      randAthlete.eat(Protein);
       console.log("Protein");
 
   });
   $(".athletefootwear").on("click", ".NikeShoe", function (){
-    Chris.footwear(Nike);
+    randAthlete.footwear(Nike);
     console.log("You picked Nike");
   });
   $(".athletefootwear").on("click", ".PumaShoe", function (){
-    Chris.footwear(Puma);
+    randAthlete.footwear(Puma);
     console.log("You picked Puma");
   });
   $(".athletefootwear").on("click", ".SandalShoe", function (){
-    Chris.footwear(Sandal);
+    randAthlete.footwear(Sandal);
     console.log("You picked a pair of sandals");
 });
 
   }
-
 }

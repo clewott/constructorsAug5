@@ -1,6 +1,8 @@
 body {
   margin: 0px;
   padding: 0px;
+  background-image: url("http://mcmsportsapparel.com/wp-content/uploads/2013/01/sports_1_h.jpg");
+  color: white;
 }
 
 h2 {
@@ -10,6 +12,10 @@ h2 {
 
 h3 {
   text-align: center;
+}
+
+button {
+  margin-bottom: 20px;
 }
 
 .select_athlete {
@@ -33,11 +39,14 @@ h3 {
   padding-bottom: 10px;
 }
 
-footer p {
+p {
   font-size: 2em;
   text-align: center;
   width: 100%;
-  height: 50px;
-  border: 1px solid black;
+  height: 40px;
   margin: 0px;
+}
+
+#btp {
+  height: 40px;
 }
