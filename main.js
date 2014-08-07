@@ -1,21 +1,36 @@
-function Athlete(name, sport, speed) {
+var randath = Athletes;
+var speedWeight;
+
+function Athlete(name, sport, speed, distance) {
 
   this.name = name;
   this.sport = sport;
   this.speed = speed;
+  this.distance = distance;
   this.eat = function(food) {
     var speedWeight = this.speed + food.weight;
     if (speedWeight > 110) {
-    console.log("WOW!! You are going to set a record.");
+    $(".footer").text("WOW!! You are going to set a record.");
   }
     else if(speedWeight > 70 && speedWeight < 110){
-      console.log("It looks like you need a little bit of practice.");
+      $(".footer").text("It looks like you need a little bit of practice.");
     }
     else {
-    console.log("Maybe working out is not your thing.");
+    $(".footer").text("Maybe working out is not your thing.");
   }
   this.speed += food.weight
   };
+
+  this.footwear = function(shoe) {
+    var speedFoot = this.distance + shoe.endurance;
+    if (speedFoot > 8){
+      $(".footer2").text("Run forest run!");
+    } else if (speedFoot <= 8 && speedFoot > 4) {
+      $(".footer2").text("Run forest!");
+    } else { $(".footer2").text("Run!");
+    this.distance += shoe.endurance;
+    };
+  }
 
 }
 
@@ -24,16 +39,16 @@ function Food(item, weight, effect) {
   this.item = item;
   this.weight = weight;
   this.effect = effect;
-  this.cause = function(athlete) {
-    var whatDidYouEat = athlete.name +" is "+ this.effect + "!";
-    if (this.effect === "Sick") {
-      console.log(whatDidYouEat);
-    } else if (this.effect === "Healthy") {
-      console.log(whatDidYouEat);
-    } else if (this.effect === "Full of toxins") {
-      console.log(whatDidYouEat);
-    }
-  };
+  // this.cause = function(athlete) {
+  //   var whatDidYouEat = athlete.name +" is "+ this.effect + "!";
+  //   if (this.effect === "Sick") {
+  //     console.log(whatDidYouEat);
+  //   } else if (this.effect === "Healthy") {
+  //     console.log(whatDidYouEat);
+  //   } else if (this.effect === "Full of toxins") {
+  //     console.log(whatDidYouEat);
+  //   }
+  // };
 
 
 
@@ -43,31 +58,32 @@ function Shoe(brand, endurance) {
 
   this.brand = brand;
   this.endurance = endurance;
-  this.footwear = function(athlete) {
-    var footwearPerformance = this.endurance + athlete.speed;
-    if (footwearPerformance > 95){
-      console.log("You picked the right footwear!");
-    } else {
-      console.log("You may want to pick another footwear");
-    }
-
-
-  };
+  // this.footwear = function(athlete) {
+  //   var footwearPerformance = this.endurance + athlete.speed;
+  //   if (footwearPerformance > 95){
+  //     console.log("You picked the right footwear!");
+  //   } else {
+  //     console.log("You may want to pick another footwear");
+  //   }
+  //
+  //
+  //
+  // };
 
 }
 
-var Chris = new Athlete("Chris", "Frisbee", 65);
-var Bolt = new Athlete("Bolt", "Running", 95);
-var Peterson = new Athlete("Peterson", "Football", 90);
+var Chris = new Athlete("Chris", "Frisbee", 65, 5);
+var Bolt = new Athlete("Bolt", "Running", 95, 2);
+var Peterson = new Athlete("Peterson", "Football", 90, 10);
 var Athletes = [Chris, Bolt, Peterson];
 
 var IceCream = new Food("IceCream", -40, "Sick");
 var Protein = new Food("Protein", 10, "Healthy");
 var RedBull = new Food("RedBull", 50, "Full of toxins");
 
-var Nike = new Shoe("Nike", 20);
-var Puma = new Shoe("Puma", 30);
-var Sandal = new Shoe("Sandal", -15);
+var Nike = new Shoe("Nike", 3);
+var Puma = new Shoe("Puma", 5);
+var Sandal = new Shoe("Sandal", -3);
 
 var Athletes = [Chris, Bolt, Peterson];
 var Foods = [IceCream, Protein, RedBull];
@@ -119,15 +135,15 @@ var page = {
 
   });
   $(".athletefootwear").on("click", ".NikeShoe", function (){
-    Nike.footwear(Chris);
+    Chris.footwear(Nike);
     console.log("You picked Nike");
   });
   $(".athletefootwear").on("click", ".PumaShoe", function (){
-    Puma.footwear(Chris);
+    Chris.footwear(Puma);
     console.log("You picked Puma");
   });
   $(".athletefootwear").on("click", ".SandalShoe", function (){
-    Sandal.footwear(Chris);
+    Chris.footwear(Sandal);
     console.log("You picked a pair of sandals");
 });
 
