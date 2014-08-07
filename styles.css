@@ -1,15 +1,25 @@
-
+body {
+  margin: 0px;
+  padding: 0px;
+}
 
 h2 {
  text-align: center;
   font-size: 4em;
 }
 
+h3 {
+  text-align: center;
+}
+
 .select_athlete {
   text-align: center;
+  width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+
 
 .fooditem {
   text-align: center;
@@ -21,4 +31,11 @@ h2 {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+footer p {
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+  margin: 0px;
 }

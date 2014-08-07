@@ -69,6 +69,10 @@ var Nike = new Shoe("Nike", 20);
 var Puma = new Shoe("Puma", 30);
 var Sandal = new Shoe("Sandal", -15);
 
+var Athletes = [Chris, Bolt, Peterson];
+var Foods = [IceCream, Protein, RedBull];
+var Shoes = [Nike, Puma, Sandal]
+
 $(document).ready(function() {
   page.init();
 });
