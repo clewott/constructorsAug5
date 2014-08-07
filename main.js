@@ -88,17 +88,17 @@ var page = {
 
   },
   initEvents: function() {
-    $(".select_athlete").on("click", ".Chris", function() {
+    $(".select_athlete").on("click", "#Chris", function() {
       Chris;
       console.log(Chris);
     });
 
-    $(".select_athlete").on("click", ".Peterson", function() {
+    $(".select_athlete").on("click", "#Peterson", function() {
       Peterson;
       console.log(Peterson);
     });
 
-    $(".select_athlete").on("click", ".Bolt", function() {
+    $(".select_athlete").on("click", "#Bolt", function() {
       Bolt;
       console.log(Bolt);
     });
